@@ -23,22 +23,6 @@
     nav.classList.remove('is-open');
   }));
 
-  // Phone mask
-  document.querySelectorAll('input[type="tel"]').forEach(input => {
-    input.addEventListener('input', e => {
-      let v = e.target.value.replace(/\D/g, '');
-      if (v.startsWith('8')) v = '7' + v.slice(1);
-      if (!v.startsWith('7')) v = '7' + v;
-      v = v.slice(0, 11);
-      let out = '+7';
-      if (v.length > 1) out += ' (' + v.slice(1, 4);
-      if (v.length >= 4) out += ') ' + v.slice(4, 7);
-      if (v.length >= 7) out += '-' + v.slice(7, 9);
-      if (v.length >= 9) out += '-' + v.slice(9, 11);
-      e.target.value = out;
-    });
-  });
-
   // Form submit
   const form = document.getElementById('leadForm');
   form?.addEventListener('submit', async e => {
@@ -52,7 +36,7 @@
 
     if (payload._gotcha) return;
 
-    if (!payload.name || !payload.phone) {
+    if (!payload.name || !payload.messenger || !payload.contact_id) {
       alert('Заполните имя и контактные данные');
       return;
     }
@@ -92,7 +76,7 @@
 
   // Reveal on scroll
   const targets = document.querySelectorAll(
-    '.principle, .service, .step, .review, .faq__item, .form, .hero__card, .course-module, .course-detail__card, .course-also, .contact-card, .price-table-wrap, .about__photo'
+    '.principle, .service, .step, .review, .faq__item, .form, .hero__card, .course-module, .course-detail__card, .course-also, .contact-card, .price-table-wrap, .about__photo, .edu-main, .edu-card'
   );
   targets.forEach(el => el.classList.add('reveal'));
   const io = new IntersectionObserver(entries => {
