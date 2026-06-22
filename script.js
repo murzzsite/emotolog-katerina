@@ -76,7 +76,7 @@
 
   // Reveal on scroll
   const targets = document.querySelectorAll(
-    '.principle, .service, .step, .review, .faq__item, .form, .hero__card, .course-module, .course-detail__card, .course-also, .contact-card, .price-table-wrap, .about__photo, .edu-main, .edu-card'
+    '.principle, .service, .step, .review, .faq__item, .form, .hero__card, .course-module, .course-detail__card, .course-also, .contact-card, .price-table-wrap, .about__photo, .edu-main, .edu-card, .sign-item, .topic-card, .result-item, .results__cta, .method-level, .method__result, .course-week, .course-format, .course-detail__content'
   );
   targets.forEach(el => el.classList.add('reveal'));
   const io = new IntersectionObserver(entries => {
