@@ -848,10 +848,14 @@ h2 {
   margin-bottom: 20px;
 }
 .hero__quote {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 500;
   color: var(--accent);
   font-style: italic;
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
+  line-height: 1.4;
 }
 .hero__trust {
   display: flex;
@@ -1268,10 +1272,22 @@ h2 {
   #nav a { padding: 12px 16px; font-size: 15px; border-radius: var(--radius-sm); }
 }
 
+/* topic-card SVG icon */
+.topic-card__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--accent-light);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
 @media (max-width: 900px) {
   .section { padding: 64px 0; }
   .hero__inner { grid-template-columns: 1fr; }
-  .hero__card { order: -1; }
+  .hero__card { display: none; }
   .course-card { max-width: 440px; }
   .about__inner { grid-template-columns: 1fr; }
   .about__photo-wrap { max-width: 280px; }
